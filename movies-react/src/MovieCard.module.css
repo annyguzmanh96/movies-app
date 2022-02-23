@@ -1,0 +1,27 @@
+.movieCard{
+    list-style: none;
+    font: size 1.5rem;
+}
+
+.movieImage{
+    border-radius: 10px;
+    background-color: azure;
+    width: 230px;
+    height: 345px;
+    
+}
+
+.movieTitle{
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* A continuación aplicamos media query para definir un estilo específico para
+cada card (Movie) en dispositivos móviles de hasta 500px de ancho*/
+
+@media (max-width: 560px){
+    .movieImage{
+        width: 100%;
+        height: auto;
+    }
+}

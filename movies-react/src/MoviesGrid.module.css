@@ -1,0 +1,18 @@
+.moviesGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 230px);
+    gap: 40px;
+    padding: 40px;
+    justify-content: center;
+}
+
+/* A continuación aplicamos media query para definir un estilo específico para
+las grillas en dispositivos móviles de hasta 500px de ancho*/
+
+@media (max-width: 500px){
+    .moviesGrid{
+        grid-template-columns: 100%;
+        justify-content: center;
+        
+    }
+}
