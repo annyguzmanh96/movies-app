@@ -1,27 +1,25 @@
 import React, {useEffect, useState} from "react";
+import { useQuery } from "../hooks/useQuery";
 import {get} from '../utils/httpClient';
 import { MovieCard } from "./MovieCard";
 import styles from './MoviesGrid.module.css';
-import { useLocation } from "react-router";
+
 
 export function MoviesGrid() {
 
   const [movies, setMovies]= useState([]); //Estado del componente
   
-  function useQuery() {
-    return( new  URLSearchParams(useLocation().search));
-  }
-
-  let query = useQuery();
-  let search=query.get('search'); //Valor específico de búsqueda
+  let query = useQuery()
+  let search=query.get('search'); //Valor específico de búsqueda 
   console.log(search);
 
   useEffect(() => {
-    get('/discover/movie').then((data) => {
+    let searchUrl= search? '/search/movie?query='+search : '/discover/movie'
+    get(searchUrl).then((data) => {
       setMovies(data.results);
     })
     
-  },[]);
+  },[search]);
 
   return(
     <ul className={styles.moviesGrid}>

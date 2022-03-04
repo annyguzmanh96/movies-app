@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import style from '../components/Search.module.css'
 import { FaSearch } from 'react-icons/fa';
 import { useHistory } from 'react-router';
+import { useQuery } from '../hooks/useQuery';
 
 
 export function Search(){
@@ -11,6 +12,13 @@ export function Search(){
         e.preventDefault(); //Ya que estamos trabjando una SPA (Single Page Aplication)
         history.push('/?search='+searchingText)
     }
+
+    let query = useQuery()
+    let search=query.get('search'); //Valor específico de búsqueda 
+    
+    useEffect(() => {
+         setSearchingText(search || '');
+    }, [search]);
 
     return(
         <form className={style.searchContainer} onSubmit={handleSubmit}>

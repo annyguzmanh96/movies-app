@@ -10,8 +10,13 @@
     height: 345px;
     
 }
-.movieImage:hover{
-   opacity: 80%;
+.movieImage:hover{ /* Generando opacidad y agrandando imagen al pasar mouse por encima*/
+    opacity: 80%; 
+    -webkit-transform:scale(1.25); 
+    -moz-transform:scale(1.25);
+    -ms-transform:scale(1.25);
+    -o-transform:scale(1.25);
+    transform:scale(1.25);
 }
 
 .movieTitle{
