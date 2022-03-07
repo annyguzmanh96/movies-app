@@ -28,7 +28,8 @@ export function Search(){
                     type='text' 
                     placeholder='Search...' 
                     className={style.searchInput} 
-                    value={searchingText} 
+                    value={searchingText?? ''} 
+                    autofocus='autofocus'
                     onChange= {
                         (e)=>setSearchingText(e.target.value.toUpperCase())
                     }
