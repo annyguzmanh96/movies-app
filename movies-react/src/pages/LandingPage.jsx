@@ -1,3 +1,4 @@
+//Página principal o Home, tiene toda la grilla de películas
 import React from 'react';
 import {MoviesGrid} from '../components/MoviesGrid';
 import { Search } from '../components/Search';

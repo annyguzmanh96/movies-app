@@ -9,8 +9,8 @@ export function Search(){
     const [searchingText, setSearchingText]= useState('');
     const history = useHistory();
     const handleSubmit= (e)=>{
-        e.preventDefault(); //Ya que estamos trabjando una SPA (Single Page Aplication)
-        history.push('/?search='+searchingText)
+        e.preventDefault(); //Ya que estamos trabajando una SPA (Single Page Aplication)
+        history.push('/?search='+searchingText) //actualizar el link de navegación agregándole a la ruta actual el path pusheado
     }
 
     let query = useQuery()
@@ -28,7 +28,7 @@ export function Search(){
                     type='text' 
                     placeholder='Search...' 
                     className={style.searchInput} 
-                    value={searchingText?? ''} 
+                    value={searchingText? searchingText : ''} 
                     autofocus='autofocus'
                     onChange= {
                         (e)=>setSearchingText(e.target.value.toUpperCase())

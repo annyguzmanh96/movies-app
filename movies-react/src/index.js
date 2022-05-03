@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root') //Se inserta en el elemento html con id 'root' toda la App
 );
 
 
